@@ -1,0 +1,81 @@
+[gd_scene load_steps=2 format=3 uid="uid://dm5brinxfnmq2"]
+
+[ext_resource type="Script" path="res://scripts/RateableUI.cs" id="1_wwrsv"]
+
+[node name="RateableUI" type="HBoxContainer" node_paths=PackedStringArray("_orderNumber", "_progressBar", "_rateableName", "_rankValue", "_rankMax", "_delete")]
+custom_minimum_size = Vector2(0, 25)
+script = ExtResource("1_wwrsv")
+_orderNumber = NodePath("OrderNumber")
+_progressBar = NodePath("ProgressBar")
+_rateableName = NodePath("ProgressBar/MarginContainer/HBoxContainer/RateableName")
+_rankValue = NodePath("ProgressBar/MarginContainer/HBoxContainer/Ranking/Value")
+_rankMax = NodePath("ProgressBar/MarginContainer/HBoxContainer/Ranking/Max")
+_delete = NodePath("ProgressBar/MarginContainer/HBoxContainer/MarginContainer/Delete")
+
+[node name="OrderNumber" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.14902, 0.215686, 0.286275, 1)
+theme_override_font_sizes/font_size = 20
+text = "1"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+show_percentage = false
+
+[node name="MarginContainer" type="MarginContainer" parent="ProgressBar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ProgressBar/MarginContainer"]
+layout_mode = 2
+
+[node name="RateableName" type="Label" parent="ProgressBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.203922, 0.360784, 0.494118, 1)
+
+[node name="Ranking" type="VBoxContainer" parent="ProgressBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = -4
+
+[node name="Separator" type="Control" parent="ProgressBar/MarginContainer/HBoxContainer/Ranking"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+
+[node name="Value" type="Label" parent="ProgressBar/MarginContainer/HBoxContainer/Ranking"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.203922, 0.360784, 0.494118, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 2
+
+[node name="Max" type="Label" parent="ProgressBar/MarginContainer/HBoxContainer/Ranking"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.203922, 0.286275, 0.368627, 1)
+theme_override_font_sizes/font_size = 11
+horizontal_alignment = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="ProgressBar/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -3
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Delete" type="Label" parent="ProgressBar/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.203922, 0.360784, 0.494118, 1)
+theme_override_font_sizes/font_size = 20
+text = "x"
+vertical_alignment = 1

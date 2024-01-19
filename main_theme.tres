@@ -1,0 +1,67 @@
+[gd_resource type="Theme" load_steps=12 format=3 uid="uid://rvfmd3da005r"]
+
+[ext_resource type="FontFile" uid="uid://ck4036bmt0cju" path="res://Itim-Regular.ttf" id="1_kefe8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8o4s0"]
+bg_color = Color(0.172549, 0.243137, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mspn2"]
+bg_color = Color(0.203922, 0.286275, 0.368627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8p7g7"]
+bg_color = Color(0.203922, 0.286275, 0.368627, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.172549, 0.243137, 0.313726, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hmif0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1o2ct"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3r56i"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nagq4"]
+bg_color = Color(0.203922, 0.286275, 0.368627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jaxw7"]
+bg_color = Color(0.172549, 0.243137, 0.313726, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m5fpi"]
+bg_color = Color(0.14902, 0.215686, 0.286275, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xh0lj"]
+bg_color = Color(0.172549, 0.243137, 0.313726, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.172549, 0.243137, 0.313726, 1)
+
+[resource]
+default_font = ExtResource("1_kefe8")
+AcceptDialog/styles/panel = SubResource("StyleBoxFlat_8o4s0")
+Button/styles/disabled = SubResource("StyleBoxFlat_mspn2")
+Button/styles/focus = SubResource("StyleBoxFlat_8p7g7")
+Button/styles/hover = SubResource("StyleBoxFlat_8p7g7")
+Button/styles/normal = SubResource("StyleBoxFlat_8p7g7")
+Button/styles/pressed = SubResource("StyleBoxFlat_8p7g7")
+LineEdit/colors/caret_color = Color(0.203922, 0.286275, 0.368627, 1)
+LineEdit/constants/caret_width = 2
+LineEdit/font_sizes/font_size = 20
+LineEdit/styles/focus = SubResource("StyleBoxEmpty_hmif0")
+LineEdit/styles/normal = SubResource("StyleBoxEmpty_1o2ct")
+LineEdit/styles/read_only = SubResource("StyleBoxEmpty_3r56i")
+MarginContainer/constants/margin_bottom = 10
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 10
+Panel/styles/panel = SubResource("StyleBoxFlat_nagq4")
+ProgressBar/styles/background = SubResource("StyleBoxFlat_jaxw7")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_m5fpi")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_8p7g7")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxFlat_8p7g7")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxFlat_8p7g7")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_xh0lj")
+VScrollBar/styles/scroll_focus = null

@@ -1,0 +1,203 @@
+[gd_scene load_steps=4 format=3 uid="uid://q7qu8a6wr85v"]
+
+[ext_resource type="Script" path="res://scripts/Controller.cs" id="1_j2k0v"]
+[ext_resource type="Theme" uid="uid://rvfmd3da005r" path="res://main_theme.tres" id="1_w854o"]
+[ext_resource type="PackedScene" uid="uid://dm5brinxfnmq2" path="res://prefabs/rateable.tscn" id="2_q0uvt"]
+
+[node name="Main" type="Node"]
+
+[node name="Controller" type="Node" parent="." node_paths=PackedStringArray("_addLabel", "_rateableContainer", "_newName", "_newValue", "_newMax")]
+script = ExtResource("1_j2k0v")
+_addLabel = NodePath("../UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name/InputBoxBg/MarginContainer/HBoxContainer/MarginContainer/Add")
+_rateableContainer = NodePath("../UI/MarginContainer/VBoxContainer/ListPanel/MarginContainer/ScrollContainer/MarginContainer/RateableContainer")
+_newName = NodePath("../UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name/InputBoxBg/MarginContainer/HBoxContainer/LineEdit")
+_newValue = NodePath("../UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating/RatingBoxes/Value/LineEdit")
+_newMax = NodePath("../UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating/RatingBoxes/Max/LineEdit")
+_rateableUI = ExtResource("2_q0uvt")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("1_w854o")
+
+[node name="MarginContainer" type="MarginContainer" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="ListPanel" type="Panel" parent="UI/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer/ListPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="UI/MarginContainer/VBoxContainer/ListPanel/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer/ListPanel/MarginContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 0
+
+[node name="RateableContainer" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/ListPanel/MarginContainer/ScrollContainer/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="EditPanel" type="Panel" parent="UI/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer/EditPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HSplitContainer" type="HSplitContainer" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer"]
+layout_mode = 2
+split_offset = 75
+dragger_visibility = 1
+
+[node name="Name" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.243137, 0.313726, 1)
+theme_override_font_sizes/font_size = 20
+text = "Name"
+
+[node name="InputBoxBg" type="ColorRect" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name"]
+layout_mode = 2
+size_flags_vertical = 3
+color = Color(0.172549, 0.243137, 0.313726, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name/InputBoxBg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name/InputBoxBg/MarginContainer"]
+layout_mode = 2
+
+[node name="LineEdit" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name/InputBoxBg/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.203922, 0.360784, 0.494118, 1)
+max_length = 20
+context_menu_enabled = false
+
+[node name="MarginContainer" type="MarginContainer" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name/InputBoxBg/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 0
+
+[node name="Add" type="Label" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Name/InputBoxBg/MarginContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+mouse_filter = 0
+theme_override_colors/font_color = Color(0.203922, 0.360784, 0.494118, 1)
+theme_override_font_sizes/font_size = 31
+text = "+"
+vertical_alignment = 1
+
+[node name="Rating" type="VBoxContainer" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.243137, 0.313726, 1)
+theme_override_font_sizes/font_size = 20
+text = "Rating"
+
+[node name="RatingBoxes" type="HBoxContainer" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Value" type="ColorRect" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating/RatingBoxes"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.172549, 0.243137, 0.313726, 1)
+
+[node name="LineEdit" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating/RatingBoxes/Value"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.203922, 0.360784, 0.494118, 1)
+alignment = 1
+max_length = 3
+context_menu_enabled = false
+
+[node name="Slash" type="Label" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating/RatingBoxes"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.172549, 0.243137, 0.313726, 1)
+theme_override_font_sizes/font_size = 21
+text = "/"
+
+[node name="Max" type="ColorRect" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating/RatingBoxes"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0.172549, 0.243137, 0.313726, 1)
+
+[node name="LineEdit" type="LineEdit" parent="UI/MarginContainer/VBoxContainer/EditPanel/MarginContainer/HSplitContainer/Rating/RatingBoxes/Max"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.203922, 0.286275, 0.368627, 1)
+alignment = 1
+max_length = 3
+context_menu_enabled = false
