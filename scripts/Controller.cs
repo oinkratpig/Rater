@@ -114,7 +114,7 @@ namespace Rater
 
 		public static void UpdateList(VBoxContainer rateablesContainer)
 		{
-			List<RateableUI> sortedRateables = _rateables.OrderBy(f => f.Percentage).ToList();
+			List<RateableUI> sortedRateables = _rateables.OrderByDescending(f => f.Percentage).ToList();
 
 			int i = 0;
 			foreach(RateableUI rateable in sortedRateables)
